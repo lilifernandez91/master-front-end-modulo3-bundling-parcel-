@@ -5,12 +5,11 @@
   "type": "module",
   "source": "src/index.html",
   "scripts": {
-    "build": "rimraf dist && parcel ./src/index.html",
-    "build:prod": "rimraf dist && parcel build ./src/index.html",
+    "build": "rimraf dist && parcel build ./src/index.html --public-url ./ --no-source-maps",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "start:dev": "rimraf dist && parcel ./src/index.html --open",
-    "start": "run-p -l type-check:watch start:dev"
+    "start": "run-p -l type-check:watch start:dev",
+    "start:dev": "parcel serve src/index.html"
   },
   "browserslist": "last 1 version",
   "keywords": [],
